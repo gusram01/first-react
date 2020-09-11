@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import AddCategory from './AddCategory';
 import GifGrid from './GifGrid';
+import PropTypes from 'prop-types';
 
+interface Props {
+  defaultCategories?: string[];
+}
 
-const GifExpertApp = () => {
+const GifExpertApp: React.FC<Props> = ({ defaultCategories = [] }) => {
 
-  const firstThree = ['Dragon Ball'];
-  const [categories, setCategories] = useState(firstThree);
+  const [categories, setCategories] = useState(defaultCategories);
   // const handleAdd = () => {
   //   setCategories([...categories].concat('SaintSeiya'));
   // }
@@ -31,6 +34,10 @@ const GifExpertApp = () => {
       </ol>
     </>
   )
+}
+
+GifExpertApp.propTypes = {
+  defaultCategories: PropTypes.array
 }
 
 export default GifExpertApp;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { RespDataGiphy } from '../types/auxTypes';
+import PropTypes from 'prop-types';
 
 interface Props {
   img: Partial<RespDataGiphy>;
@@ -14,6 +15,10 @@ const GifGridItem: React.FC<Props> = ({ img }) => {
     </div>
   )
 
+}
+
+GifGridItem.propTypes = {
+  img: PropTypes.object.isRequired
 }
 
 export default GifGridItem;
