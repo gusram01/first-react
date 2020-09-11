@@ -7,7 +7,7 @@ interface Props {
   defaultCategories?: string[];
 }
 
-const GifExpertApp: React.FC<Props> = ({ defaultCategories = [] }) => {
+const GifExpertApp: React.FC<Props> = ({ defaultCategories = ['One punch'] }) => {
 
   const [categories, setCategories] = useState(defaultCategories);
   // const handleAdd = () => {
